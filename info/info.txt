@@ -1,0 +1,73 @@
+tipo_contato ENUM(email-celular-telefone) OK
+	
+categoria ENUM(pequeno-crianca-intermediario-adolescente-jovem-adulto-idoso) OK
+
+situacao_pessoa ENUM(membro_nao_batizado-membro-visitante-visitante_frequente-novo_convertido)OK
+	
+estado_civil ENUM(solteiro-amasiado-divorciado-casado-viúvo) OK
+	
+genero ENUM(MAS-FEM) OK
+
+funcao(obreiro-diacono-ungido-pastor-quinzenal-secretaria I-secretariaGA-responsavel-)OK
+	id
+	nome
+	descricao
+	data_criacao
+	data_atualizacao
+	status
+
+usuario OK
+	id
+	nome
+	login
+	senha
+	data_criacao
+	data_atualizacao
+	status
+
+familia OK
+	id
+	nome
+	logradouro
+	numero
+	complemento
+	bairro
+	cep
+	cidade
+	uf
+	data_criacao
+	data_atualizacao
+	status
+	
+pessoa
+	id
+	nome
+	tipo_pessoa
+	categoria
+	situacao_pessoa
+	genero
+	familia_id
+	data_nascimento
+	data_criacao
+	data_atualizacao
+	status
+
+sistema
+	igreja
+	pessoa_id (pastor)
+	data_criacao
+	data_atualizacao
+	
+lista_funcao
+	id
+	pessoa_id
+	funcao_id
+		
+lista_contato
+	id
+	pessoa_id
+	tipo_contato
+	contato
+	data_criacao
+	data_atualizacao
+	status
